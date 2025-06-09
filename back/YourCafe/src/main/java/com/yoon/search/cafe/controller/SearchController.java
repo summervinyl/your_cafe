@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SearchController {
 	
-	//private LocationData location;
-	
 	@Value("${naver.client-id}")
 	private String NAVER_API_ID;
 
@@ -39,25 +37,18 @@ public class SearchController {
 	@ResponseBody
 	public String searchCafe(@RequestBody SearchRequestVO request) {
 		
-//		System.err.println(request.getLocation().getLatitude());
-//		System.err.println(request.getLocation().getLongitude());
-//		String addrName =  KakaoUtil.coordToAddr(kakao_secret, Double.toString(request.getLocation().getLongitude()), Double.toString(request.getLocation().getLatitude()));
 		System.err.println(request.getLatitude());
 		System.err.println(request.getLongitude());
 		String addrName =  KakaoUtil.getAddressFromCoords(kakao_secret, Double.toString(request.getLongitude()), Double.toString(request.getLatitude()));
 		
-		System.err.println("===========================================");
-		System.err.println(addrName);
-		System.err.println("===========================================");
-		
-		// 
+		System.err.println("현재 주소" + addrName);
+
 	    URI uri = UriComponentsBuilder
 	            .fromUriString("https://openapi.naver.com/")
 	            .path("v1/search/local.json")
-//	            .queryParam("query", addr + cafe) // query=검색어&display=10&start=1&sort=random
 	            .queryParam("query", addrName + cafe) // query=검색어&display=10&start=1&sort=random
 
-	            .queryParam("display", 5)        // 화면에 출력되는 검색 결과 수
+	            .queryParam("display", 5)         // 화면에 출력되는 검색 결과 수
 	            .queryParam("start", 1)           // 검색 시작 위치
 	            .queryParam("sort", "random")	  // 검색 결과 정렬 방법
 	            .encode(StandardCharsets.UTF_8)
@@ -73,8 +64,8 @@ public class SearchController {
 
 	    ResponseEntity<String> result = restTemplate.exchange(req, String.class);
 	    
-	    //System.err.println(request.getLocation());
-
+	    System.err.println("카페 리스트" + result.getBody());
+	    
 	    return result.getBody();
 	}
 

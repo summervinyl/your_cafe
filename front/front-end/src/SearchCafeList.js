@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import MapApi from "./MapApi";
 
@@ -19,7 +19,7 @@ export default function SearchCafeList() {
         const longitude = position.coords.longitude;   // 경도
 
         setCoords({ lat: latitude, lng: longitude }); // 현재 위치 저장
-        console.log("현재 위치:", latitude, longitude);
+        console.log("현재 위치: ", latitude, longitude);
 
         // 현재 위치를 기반으로 카페 리스트 요청
         const data = { latitude, longitude };
@@ -47,6 +47,7 @@ export default function SearchCafeList() {
     console.log(cafeList + ' 카페');
     console.log(cafeList.length + ' 카페 개수');
 
+    // 위치 미허용 시, 예외 처리.
     if (coords.lat == 0) {
         return (
             <div className="errorMsg">
