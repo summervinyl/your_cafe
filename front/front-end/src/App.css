@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Cafe24Decobox';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Decobox.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'walter';
+  src: url('./font/WalterTurncoat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'CoreDream';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* HomePage.js */
+.homepageDiv {
+  background-image: url(./background_cafe.png);
+  position: relative;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.mainDiv {
+  position: absolute;
+  /* 부모 태그를 기준으로 움직인다. */
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+
+.title {
+  font-family: 'Cafe24Decobox';
+  color: wheat;
+  text-align: center;
+  font-size: 100px;
+  margin: 0;
+}
+
+.SearchLink {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.SearchLink a {
+  font-family: 'walter';
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  transition-duration: 0.5s;
+}
+
+.SearchLink a:hover {
+  color: tomato;
+  font-weight: 1000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* SearchCafeList.js */
+.errorMsg {
+  font-family: 'CoreDream';
+  justify-items: center;
+  margin-top: 10%;
+}
+
+.errorMsg h1 {
+  color: rgb(100, 163, 214);
+  margin-bottom: 30px;
+}
+
+.errorMsg p {
+  color: rgb(53, 53, 53);
+}
+
+.decoSpan {
+  font-weight: bold;
+  color: black;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.btnDiv {
+  text-align: center;
+}
+
+.locationUpdateBtn {
+  border: 0;
+  background: linear-gradient(to right, #9fd8ff, #ff92aa);
+  padding: 10px 15px 10px 15px;
+  min-width: 100px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0px 2px 2px 2px #ffffff40 inset, 0px -2px 2px 2px #00000020 inset;
+}
+
+.locationUpdateBtn:hover {
+  color: rgb(235, 206, 179);
+}
