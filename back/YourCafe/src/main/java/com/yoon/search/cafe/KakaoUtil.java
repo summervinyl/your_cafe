@@ -41,9 +41,7 @@ public class KakaoUtil {
 		// 인증키 - KakaoAK하고 한 칸 띄워주셔야해요!
 		String auth = "KakaoAK " + kakaoKey;
 
-		System.err.println("KakakoUtil.java 카카오키");
-		System.err.println(kakaoKey);
-		System.err.println("KakakoUtil.java 카카오키");
+		System.err.println("KakakoUtil.java 카카오키 : " + kakaoKey);
 
 		// URL 설정
 		URL url = new URL(apiUrl);
