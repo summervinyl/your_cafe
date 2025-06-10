@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import './App.css';
 
-function HomePage() {
+function MainPage() {
   return (
-    <div className="homepageDiv">
+    <div className="mainpageDiv">
       <div className="mainDiv">
-        <h1 className="title">Nearby Cafes</h1>
+        <h1 className="title">NEARBY CAFES</h1>
         <ul>
           <li className="SearchLink">
             <Link to="/SearchCafeList">Search for nearby cafes</Link>
@@ -16,4 +16,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default MainPage;

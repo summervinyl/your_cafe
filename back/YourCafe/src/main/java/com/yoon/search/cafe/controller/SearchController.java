@@ -37,11 +37,11 @@ public class SearchController {
 	@ResponseBody
 	public String searchCafe(@RequestBody SearchRequestVO request) {
 		
-		System.err.println(request.getLatitude());
-		System.err.println(request.getLongitude());
+		System.err.println("위도 : " + request.getLatitude());
+		System.err.println("경도 : " + request.getLongitude());
 		String addrName =  KakaoUtil.getAddressFromCoords(kakao_secret, Double.toString(request.getLongitude()), Double.toString(request.getLatitude()));
 		
-		System.err.println("현재 주소" + addrName);
+		System.err.println("현재 주소 : " + addrName);
 
 	    URI uri = UriComponentsBuilder
 	            .fromUriString("https://openapi.naver.com/")
@@ -64,7 +64,7 @@ public class SearchController {
 
 	    ResponseEntity<String> result = restTemplate.exchange(req, String.class);
 	    
-	    System.err.println("카페 리스트" + result.getBody());
+	    System.err.println("카페 리스트 \n" + result.getBody());
 	    
 	    return result.getBody();
 	}

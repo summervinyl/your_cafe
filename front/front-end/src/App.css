@@ -17,8 +17,11 @@
   font-style: normal;
 }
 
-/* HomePage.js */
-.homepageDiv {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* MainPage.js */
+.mainpageDiv {
   background-image: url(./background_cafe.png);
   position: relative;
   background-size: cover;
@@ -26,18 +29,27 @@
   height: 100vh;
   margin: 0;
   padding: 0;
+  background-position: center;
 }
 
-.mainDiv {
+/* 원래 디자인인 */
+/* .mainDiv {
   position: absolute;
-  /* 부모 태그를 기준으로 움직인다. */
   top: 50%;
   left: 50%;
   margin: -25px 0 0 -25px;
+} */
+ 
+.mainDiv {
+  position: absolute;
+  /* 부모 태그를 기준으로 움직인다. */
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .title {
-  font-family: 'Cafe24Decobox';
+  font-family: "Roboto Condensed", sans-serif;
   color: wheat;
   text-align: center;
   font-size: 100px;
